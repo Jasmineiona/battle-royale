@@ -45,3 +45,14 @@ Contenders:
 	Frank Lloyd Wright
 	Meriwether Lewis & William Clark
 	Mark Twain
+
+Attributes:
+
+	Bonafide Badass +7%
+	Alcoholic -2%
+	Genius +5%
+	Humanitarian +5%
+	Tech Advantage +3% (compares prominent centuries of persons)
+	War Experience: Civilian(0) +0%
+					Fighter(1)  +4%
+					War Hero(2) +7%
