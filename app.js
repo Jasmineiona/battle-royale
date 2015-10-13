@@ -55,12 +55,43 @@ function fight(contA, contB) {
 	var fate = Math.floor(Math.random() * 100);
 	console.log("Fate has chosen " + fate);
 
+	var elWinner = document.getElementById('winnerbox');
 	if (fate <= contA.chance) {
 		console.log(contA.named + " is the winner!");
+		elWinner.textContent = (contA.named + " is the winner!");
 	} else {
 		console.log(contB.named + " is the winner!");
+		elWinner.textContent = (contB.named + " is the winner!");
 	}
 }
 
-fight(markTwain, nikTesla);
 
+
+var imgs = new Array();
+imgs[0] = new Image();
+imgs[0].src = 'images/twain.jpg';
+imgs[1] = new Image();
+imgs[1].src = 'images/tesla.jpg';
+
+var p1 = document.getElementById('left-pic');
+var p2 = document.getElementById('right-pic');
+var name1 = document.getElementById('left-nametag');
+var name2 = document.getElementById('right-nametag');
+
+p1.appendChild(imgs[0]);
+p2.appendChild(imgs[1]);
+name1.textContent = markTwain.named;
+name2.textContent = nikTesla.named;
+
+var test = function() {
+	console.log("user right or wrong function placeholder");
+};
+
+p1.addEventListener('click', function() {
+	fight(markTwain,nikTesla);
+});
+p1.addEventListener('click', test);
+p2.addEventListener('click', function() {
+	fight(markTwain,nikTesla);
+});
+p2.addEventListener('click', test);
