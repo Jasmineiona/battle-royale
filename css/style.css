@@ -1,0 +1,41 @@
+h1 {
+	text-align: center;
+}
+ul {
+	list-style: none;
+}
+main {
+	border: 1px dashed blue;
+}
+#left-container, #center-container, #right-container {
+	border: 1px dashed green;
+	height: 500px;
+}
+#right-container, #right-pic, #right-nametag, #right-bonus {
+	float: right;
+}
+#center-container h2{
+	text-align: center;
+	margin-top: 200px;
+}
+button {
+	margin-top: 100px;
+}
+#results {
+	border: 1px dashed red;
+	margin-top: 10px;
+	height: 150px;
+	text-align: center;
+}
+#right-pic img {
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+}
+footer {
+	height: 100px;
+}
+footer p {
+	float: right;
+	margin-right: 100px;
+	margin-top: 45px;
+}
