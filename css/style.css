@@ -62,6 +62,14 @@ aside p {
 	line-height: 0px;
 	text-align: right;
 }
+
+#context {
+	border: 2px dashed blue;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+
 footer {
 	height: 100px;
 }

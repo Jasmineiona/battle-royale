@@ -202,12 +202,16 @@ var p2tracker = function() {
 	}
 	console.log("You chose " + p2Choice.named);
 };
-var sendTracker = function() {
-	var elWinTracker = document.getElementById('win-tracker');
-	var elLoseTracker = document.getElementById('lose-tracker');
-	elWinTracker.textContent = 'Winning bets: ' + userWinningBets;
-	elLoseTracker.textContent = 'Losing bets: ' + userLosingBets;
-};
+//var sendTracker = function() {
+// 	var elWinTracker = document.getElementById('win-tracker');
+// 	var elLoseTracker = document.getElementById('lose-tracker');
+// 	elWinTracker.textContent = 'Winning bets: ' + userWinningBets;
+// 	elLoseTracker.textContent = 'Losing bets: ' + userLosingBets;
+
+// 	bettingData[0].value = userWinningBets;
+// 	bettingData[1].value = userLosingBets;
+
+// };
 
 //++++++++++++++++++++++++++++++++++ GLOBAL VARIABLES 'n FUNCTIONS
 
@@ -222,6 +226,41 @@ sendTracker();
 var goButton = document.getElementById('button');
 var p1 = document.getElementById('left-container');
 var p2 = document.getElementById('right-container');
+
+var bettingData = [
+	{
+		value: userWinningBets,
+		color: "blue",
+		highlight: "lightblue",
+		label: "winning bets"
+	},
+	{
+		value: userLosingBets,
+		color: "red",
+		highlight: "lightcoral",
+		label: "losing bets"
+	}
+];
+
+var sendTracker = function() {
+	var elWinTracker = document.getElementById('win-tracker');
+	var elLoseTracker = document.getElementById('lose-tracker');
+	elWinTracker.textContent = 'Winning bets: ' + userWinningBets;
+	elLoseTracker.textContent = 'Losing bets: ' + userLosingBets;
+
+	bettingData[0].value = userWinningBets;
+	bettingData[1].value = userLosingBets;
+
+};
+
+sendTracker();
+
+
+var context = document.getElementById("context").getContext('2d');
+var betChart = new Chart(context).PolarArea(bettingData);
+
+
+
 
 //+++++++++++++++++++++++++++++++++++++++++++++ EVENT LISTENERS
 
