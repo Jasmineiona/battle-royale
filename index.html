@@ -2,32 +2,43 @@
 <html>
 <head>
 	<title>Historic Battle Royale</title>
-	<!-- <link rel="stylesheet" href="css/skeleton.css" /> -->
-	<link rel="stylesheet" href="css/old-style.css" />
+	<link rel="stylesheet" href="css/skeleton.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
 </head>
 <body>
 	<header>
 		<h1>Historic Battle Royale</h1>
-		<button id="button">FIGHT</button>
 	</header>
-	<main>
-		<section id="left-container">
-			<h3 id="left-nametag"></h3>
-			<div id="left-pic"></div>
-			<ul id="left-bonus"></ul>
-		</section>
-		<section id="right-container">
-			<h3 id="right-nametag"></h3>
-			<div id="right-pic"></div>
-			<ul id="right-bonus"></ul>
-		</section>
-		<section id="results">
-			<h2 id="winnerbox"></h2>
-			<h3 id="winner-extra"></h3
-			<p id="usertally"></p>
-		</section>
+	<main class="container">
+		<div class="row">
+			<section id="left-container" class="five columns">
+				<h3 id="left-nametag"></h3>
+				<div id="left-pic"></div>
+				<ul id="left-bonus"></ul>
+			</section>
+			<section id="center-container" class="two columns">
+				<h2>VS</h2>
+				<button id="button">FIGHT</button>
+			</section>
+			<section id="right-container" class="five columns">
+				<h3 id="right-nametag"></h3>
+				<div id="right-pic"></div>
+				<ul id="right-bonus"></ul>
+			</section>
+		</div>
+		<div class="row">
+			<section id="results" class="twelve columns">
+				<h2 id="winnerbox"></h2>
+				<h3 id="winner-extra"></h3>
+			</section>
+		</div>
 	</main>
-	<footer>
+	<aside>
+		<p id="win-tracker"></p>
+		<p id="lose-tracker"></p>
+	</aside>
+	<footer class="eleven column">
 		<p>Site by Don Chatelain</p>
 	</footer>
 

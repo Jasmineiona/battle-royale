@@ -72,7 +72,7 @@ function getContenderList() {
 	var beethoven = new Contender("Ludwig Beethoven", 15, 0, false, false, true, false, imgs[1]);
 	var curie = new Contender("Marie Curie", 20, 0, false, false, true, true, imgs[2]);
 	var einstein = new Contender("Albert Einstein", 20, 0, false, false, true, true, imgs[3]);
-	var franklin = new Contender("Benjamin Fraklin", 18, 1, false, false, true, false, imgs[4]);
+	var franklin = new Contender("Benjamin Franklin", 18, 1, false, false, true, false, imgs[4]);
 	var tesla = new Contender("Nikola Tesla", 19, 0, false, true, true, false, imgs[8]);
 	var twain = new Contender("Mark Twain", 19, 1, true, true, false, false, imgs[10]);
 
@@ -194,7 +194,7 @@ var p1tracker = function() {
 };
 
 var p2tracker = function() {
-	var elWinner = document.getElementById('winnerbox')
+	var elWinner = document.getElementById('winnerbox');
 	if (p2Choice.named === elWinner.textContent) {
 		userWinningBets += 1;
 	} else if (p1Choice.named === elWinner.textContent) {
@@ -202,16 +202,23 @@ var p2tracker = function() {
 	}
 	console.log("You chose " + p2Choice.named);
 };
+var sendTracker = function() {
+	var elWinTracker = document.getElementById('win-tracker');
+	var elLoseTracker = document.getElementById('lose-tracker');
+	elWinTracker.textContent = 'Winning bets: ' + userWinningBets;
+	elLoseTracker.textContent = 'Losing bets: ' + userLosingBets;
+};
 
-//+++++++++++++++++++++++++++++++++++++++++++++ GLOBAL VARIABLES
+//++++++++++++++++++++++++++++++++++ GLOBAL VARIABLES 'n FUNCTIONS
 
+var userWinningBets = 0;
+var userLosingBets = 0;
 var contenderList = new Array();
 getContenderList();
 getAllBonus();
 var p1Choice;
 var p2Choice;
-var userWinningBets = 0;
-var userLosingBets = 0;
+sendTracker();
 var goButton = document.getElementById('button');
 var p1 = document.getElementById('left-container');
 var p2 = document.getElementById('right-container');
@@ -228,6 +235,7 @@ goButton.addEventListener('click', function() {
 p1.addEventListener('click', function() {
 	fight(p1Choice, p2Choice);
 	p1tracker();
+	sendTracker();
 	console.log("Running winning bets: " + userWinningBets);
 	console.log("Running losing bets: " + userLosingBets);
 });
@@ -235,6 +243,7 @@ p1.addEventListener('click', function() {
 p2.addEventListener('click', function() {
 	fight(p1Choice, p2Choice);
 	p2tracker();
+	sendTracker();
 	console.log("Running winning bets: " + userWinningBets);
 	console.log("Running losing bets: " + userLosingBets);	
 });
